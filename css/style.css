@@ -10,7 +10,7 @@ html {
 
 body {
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./fond.jpg') no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('wallpaper.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #F2F4F3;
     font-family: 'Serif', sans-serif;
@@ -44,6 +44,7 @@ nav {
     right: 2%;
     max-width: 95%;
     flex-grow: 4;
+    z-index: 10;
 }
 
 nav > div {
@@ -55,10 +56,16 @@ nav > div > a {
     font-size: 30px;
     color: #F2F4F3;
     font-family: 'Inter', sans-serif;
+    transition: transform 0.3s ease;
+}
+
+nav > div > a:hover {
+    transform: scale(1.05);
 }
 
 .submenu {
-    display: none;
+    display: block;
+    visibility: hidden;
     background-color: #22333B;
     color: #F2F4F3;
     position: absolute;
@@ -71,11 +78,16 @@ nav > div > a {
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     line-height: 1.5;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
 }
 
 nav > div:hover .submenu,
 nav > div .submenu:hover {
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 main {
@@ -86,7 +98,7 @@ main {
 }
 
 main > :first-child {
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 article {
@@ -99,15 +111,56 @@ article {
     box-shadow: 5px 5px 5px 3px #5E503F;
     font-size: 15px;
     border: #507a8c 1px solid;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    transition: transform 0.3s ease-in-out;
 }
 
+article:hover {
+    transform: scale(1.025);
+}
+
+article:first-child {
+    flex-direction: row;
+}
+
+article > img,
+article > .container > img {
+    max-width: 30%;
+    height: auto;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+article > .container {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    text-align: justify;
+}
+
+article p {
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 10px;
+    margin: 0;
+}
+
+article > h2,
 h2 {
     font-family: 'SanguisNoctis', serif;
     font-size: 30px;
     color: #F2F4F3;
     text-align: center;
     font-style: italic;
-    margin: 15px 0;
+    margin-top: 20px;
+    margin-bottom: 0;
 }
 
 a {
@@ -115,11 +168,8 @@ a {
     text-decoration: none;
 }
 
-a[id^="room"] {
-    scroll-margin-top: 60px;
-}
-
-a:hover {
+a:hover,
+.submenu a:hover {
     color: #A9927D;
 }
 
@@ -128,8 +178,8 @@ a:hover {
     text-decoration: none;
 }
 
-.submenu a:hover {
-    color: #A9927D;
+[id] {
+    scroll-margin-top: 70px;
 }
 
 footer {
