@@ -9,9 +9,11 @@ html {
 }
 
 body {
-    background-color: #212529;
-    color: #E9ECEF;
-    font-family: 'Inter', sans-serif;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./fond.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #F2F4F3;
+    font-family: 'Serif', sans-serif;
     font-size: 20px;
     margin: 0;
     padding: 0;
@@ -20,7 +22,7 @@ body {
 header {
     text-align: center;
     padding: 10px;
-    background-color: #212529;
+    background-color: rgba(0, 0, 0, 0.01);
     border-radius: 10px;
     margin-bottom: 20px;
     font-size: 20px;
@@ -31,9 +33,9 @@ nav {
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #343A40;
+    background-color: #22333B;
     border-radius: 10px;
-    border-top: #212529 5px solid;
+    border-top: rgba(83, 59, 44, 0.5) 5px solid;
     top: 0;
     padding: 10px;
     margin-bottom: 25px;
@@ -51,14 +53,14 @@ nav > div {
 
 nav > div > a {
     font-size: 30px;
-    color: #E9ECEF;
+    color: #F2F4F3;
     font-family: 'Inter', sans-serif;
 }
 
 .submenu {
     display: none;
-    background-color: #343A40;
-    color: #E9ECEF;
+    background-color: #22333B;
+    color: #F2F4F3;
     position: absolute;
     text-align: start;
     top: 100%;
@@ -91,25 +93,25 @@ article {
     text-align: center;
     border-radius: 20px;
     max-width: 65%;
-    padding: 5px 0;
+    padding: 5px 10px;
     margin: 15px 0;
-    background-color: #6C757D;
-    box-shadow: 5px 5px 5px 3px #495057;
+    background-color: rgba(10, 9, 8, 0.8);
+    box-shadow: 5px 5px 5px 3px #5E503F;
     font-size: 15px;
-    border: #F8F9FA 1px solid;
+    border: #507a8c 1px solid;
 }
 
 h2 {
     font-family: 'SanguisNoctis', serif;
     font-size: 30px;
-    color: #212529;
+    color: #F2F4F3;
     text-align: center;
     font-style: italic;
     margin: 15px 0;
 }
 
 a {
-    color: #E9ECEF;
+    color: #F2F4F3;
     text-decoration: none;
 }
 
@@ -118,24 +120,24 @@ a[id^="room"] {
 }
 
 a:hover {
-    color: #ADB5BD;
+    color: #A9927D;
 }
 
 .submenu a {
-    color: #E9ECEF;
+    color: #F2F4F3;
     text-decoration: none;
 }
 
 .submenu a:hover {
-    color: #ADB5BD;
+    color: #A9927D;
 }
 
 footer {
     text-align: center;
     padding: 5px;
     margin-top: 50px;
-    background-color: #343A40;
-    color: #E9ECEF;
+    background-color: #22333B;
+    color: #F2F4F3;
     font-style: oblique;
     font-size: 15px;
     line-height: 0.3;
